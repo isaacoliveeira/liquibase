@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+        http://www.liquibase.org/xml/ns/pro
+        http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd">
+
+    <preConditions>  
+        <runningAs username="database-Prefeitura"/>  
+    </preConditions>  
+
+    <changeSet id="1" author="USER">  
+        <createTable tableName="datatran">  
+            <column name="id" type="int" autoIncrement="true">  
+                <constraints primaryKey="true" nullable="false"/>  
+            </column>  
+            <column name="data" type="varchar(50)">  
+                <constraints nullable="false"/>  
+            </column>  
+            <column name="dia_da_semana" type="varchar(50)">  
+                <constraints nullable="false"/>  
+            </column>  
+            <column name="br" type="varchar(10)">  
+                <constraints nullable="false"/>  
+            </column>  
+            <column name="municipio" type="varchar(100)">  
+                <constraints nullable="false"/>  
+            </column>  
+            <column name="estado" type="char(2)">  
+                <constraints nullable="false"/>  
+            </column>  
+            <column name="tipo_de_acidente" type="varchar(50)">  
+                <constraints nullable="false"/>  
+            </column>  
+        </createTable>  
+    </changeSet>  
